@@ -4,7 +4,7 @@ const CATEGORIES = ["All", "Electronics", "Clothing", "Home"];
 
 export default function Sidebar({ category, setCategory, price, setPrice }) {
   return (
-    <aside className="bg-blue-900 text-white rounded-lg p-5 w-full max-w-xs h-fit">
+    <aside className="bg-blue-900 text-white rounded-lg p-5 w-full md:max-w-xs h-fit">
       <h2 className="font-bold text-lg mb-4">Filters</h2>
 
       <div className="mb-6">

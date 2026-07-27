@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <main>
       <Header onSearch={(value) => updateParams({ search: value })} />
-      <div className="p-6 flex gap-6">
+      <div className="p-6 flex flex-col md:flex-row gap-6">
         <Sidebar
           category={category}
           setCategory={(cat) => updateParams({ category: cat })}

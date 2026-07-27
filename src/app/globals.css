@@ -5,6 +5,11 @@
   --foreground: #171717;
 }
 
+@theme {
+  --color-brand: #1e3a8a;
+  --color-brand-dark: #172554;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

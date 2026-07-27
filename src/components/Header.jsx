@@ -16,7 +16,7 @@ export default function Header({ onSearch }) {
   };
 
   return (
-    <header className="bg-blue-900 text-white px-6 py-4 flex items-center justify-between gap-4">
+    <header className="bg-blue-900 text-white px-4 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-3">
       <div className="text-xl font-bold shrink-0">Logo</div>
 
       <div className="flex-1 max-w-md relative">
