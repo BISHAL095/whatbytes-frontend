@@ -26,7 +26,7 @@ export default function Header({ onSearch }) {
           value={query}
           onChange={handleChange}
           placeholder="Search for products..."
-          className="w-full pl-9 pr-3 py-2 rounded-md text-gray-900 text-sm focus:outline-none"
+          className="w-full pl-9 pr-3 py-2 rounded-md border border-gray-300 bg-transparent text-gray-900 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-brand/50"
         />
       </div>
 
