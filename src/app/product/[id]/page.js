@@ -6,11 +6,13 @@ import Image from "next/image";
 import { Star, Minus, Plus } from "lucide-react";
 import Header from "@/components/Header";
 import products from "@/data/products";
+import useCartStore from "@/store/cartStore"; 
 
 export default function ProductDetail() {
   const { id } = useParams();
   const router = useRouter();
   const [quantity, setQuantity] = useState(1);
+  const addToCart = useCartStore((state) => state.addToCart);
 
   const product = products.find((p) => p.id === Number(id));
 
@@ -29,7 +31,7 @@ export default function ProductDetail() {
   }
 
   const handleAddToCart = () => {
-    console.log("add to cart", product, "qty:", quantity);
+    addToCart(product, quantity);  
   };
 
   return (

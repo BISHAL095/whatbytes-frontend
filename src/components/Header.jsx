@@ -2,9 +2,12 @@
 
 import { Search, ShoppingCart, User } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
+import useCartStore from "@/store/cartStore";
 
-export default function Header({ onSearch, cartCount = 0 }) {
+export default function Header({ onSearch }) {
   const [query, setQuery] = useState("");
+  const totalItems = useCartStore((state) => state.getTotalItems());
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -28,15 +31,18 @@ export default function Header({ onSearch, cartCount = 0 }) {
       </div>
 
       <div className="flex items-center gap-4 shrink-0">
-        <button className="flex items-center gap-2 bg-blue-950 hover:bg-blue-800 px-4 py-2 rounded-md text-sm">
+        <Link
+          href="/cart"
+          className="flex items-center gap-2 bg-blue-950 hover:bg-blue-800 px-4 py-2 rounded-md text-sm"
+        >
           <ShoppingCart className="w-4 h-4" />
           Cart
-          {cartCount > 0 && (
+          {totalItems > 0 && (
             <span className="bg-white text-blue-900 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-              {cartCount}
+              {totalItems}
             </span>
           )}
-        </button>
+        </Link>
         <User className="w-6 h-6" />
       </div>
     </header>

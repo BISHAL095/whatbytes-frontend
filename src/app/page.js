@@ -6,10 +6,12 @@ import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import ProductGrid from "@/components/ProductGrid";
 import products from "@/data/products";
+import useCartStore from "@/store/cartStore";
 
 export default function Home() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const addToCart = useCartStore((state) => state.addToCart);
 
   const category = searchParams.get("category") || "All";
   const price = Number(searchParams.get("price")) || 1000;
@@ -38,10 +40,7 @@ export default function Home() {
 
   return (
     <main>
-      <Header
-        cartCount={0}
-        onSearch={(value) => updateParams({ search: value })}
-      />
+      <Header onSearch={(value) => updateParams({ search: value })} />
       <div className="p-6 flex gap-6">
         <Sidebar
           category={category}
@@ -51,10 +50,7 @@ export default function Home() {
         />
         <div className="flex-1">
           <h1 className="text-2xl font-bold mb-4">Product Listing</h1>
-          <ProductGrid
-            products={filteredProducts}
-            onAddToCart={(p) => console.log("add", p)}
-          />
+          <ProductGrid products={filteredProducts} onAddToCart={(p) => addToCart(p, 1)} />
         </div>
       </div>
     </main>
