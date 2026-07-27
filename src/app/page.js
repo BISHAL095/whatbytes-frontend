@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Sidebar from "@/components/Sidebar";
 import ProductGrid from "@/components/ProductGrid";
 import products from "@/data/products";
@@ -53,6 +54,7 @@ export default function Home() {
           <ProductGrid products={filteredProducts} onAddToCart={(p) => addToCart(p, 1)} />
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
