@@ -3,7 +3,7 @@
 A responsive e-commerce product listing app built with Next.js, Tailwind CSS, and Zustand.
 
 ## Live Demo
-[https://whatbytes-frontend-pi.vercel.app](https://your-vercel-url.vercel.app)
+[https://whatbytes-frontend-pi.vercel.app](https://whatbytes-frontend-pi.vercel.app)
 
 ## Features
 - Product listing page with responsive grid (3 cols desktop, 2 tablet, 1 mobile)
